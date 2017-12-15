@@ -311,6 +311,8 @@ uis.directive('uiSelect',
           element[0].style.left = offset.left + 'px';
           element[0].style.top = offset.top + 'px';
           element[0].style.width = offset.width + 'px';
+
+          $select.setFocus();
         }
 
         function resetDropdown() {
