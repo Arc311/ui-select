@@ -406,7 +406,8 @@ uis.controller('uiSelectCtrl',
           } else {
             // tagging always operates at index zero, taggingLabel === false pushes
             // the ctrl.search value without having it injected
-            if ( ctrl.activeIndex === 0 ) {
+            // second `if` part fix a bag with fast click any button with Enter
+            if ( ctrl.activeIndex === 0 || ctrl.activeIndex === -1 ) {
               // ctrl.tagging pushes items to ctrl.items, so we only have empty val
               // for `item` if it is a detected duplicate
               if ( item === undefined ) return;
