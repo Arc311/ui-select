@@ -137,6 +137,9 @@ uis.controller('uiSelectCtrl',
             ctrl.$animate.off('enter', container[0], animateHandler);
             $timeout(function () {
               ctrl.focusSearchInput(initSearchValue);
+              if (ctrl.activeIndex === 0) {
+                container[0].scrollTop = 0;
+              }
             });
           }
         };
@@ -460,6 +463,7 @@ uis.controller('uiSelectCtrl',
     $timeout(function() {
       ctrl.focusser[0].focus();
     }, 0, false);
+    ctrl.activeIndex = 0;
   };
 
   // Toggle dropdown
